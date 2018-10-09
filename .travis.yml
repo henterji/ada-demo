@@ -1,0 +1,17 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+install: mvn test -Dtest=RunCucumber
+
+after_success: ./report.sh
+
+after_failure: ./report.sh
+
+notifications:
+  email:
+    recipients:
+      - henterji@163.com
+    on_success: always
+    on_failure: always
