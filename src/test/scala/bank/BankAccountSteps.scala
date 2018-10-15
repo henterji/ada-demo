@@ -2,12 +2,21 @@ package bank
 
 import com.waioeka.sbt.runner.CucumberSpec
 import cucumber.api.scala.{ EN, ScalaDsl }
+import org.slf4j.LoggerFactory
 
-class CucumberTestSuite extends CucumberSpec
 
-class StepDefinitions extends ScalaDsl with EN {
+class BankAccountSteps extends ScalaDsl with EN {
   var bankAccount: BankAccount = _
   var result: Either[String, BankAccount] = _
+
+  private val log = LoggerFactory.getLogger(classOf[BankAccountSteps])
+
+  Before { scenario =>
+    log.info("Before...")
+  }
+  After { scenario =>
+    log.info("...After")
+  }
 
   Given("""^an account with a balance of \$(.+)$""") { (balance: Double) =>
     bankAccount = new BankAccount(balance)
