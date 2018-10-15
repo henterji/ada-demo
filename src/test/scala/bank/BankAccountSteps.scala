@@ -1,6 +1,5 @@
 package bank
 
-import com.waioeka.sbt.runner.CucumberSpec
 import cucumber.api.scala.{ EN, ScalaDsl }
 import org.slf4j.LoggerFactory
 
