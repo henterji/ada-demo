@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions
 
 @RunWith(classOf[Cucumber])
 @CucumberOptions(
-  plugin = Array("pretty", "html:target/cucumber-html-report", "json:target/cucumber-report.json"),
+  plugin = Array("pretty", "html:target/cucumber-html-report", "json:target/cucumber-report.json", "com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:target/report.html"),
   features = Array("classpath:features/BankAccount.feature", "classpath:features/TableCount.feature"),
   glue = Array("bank", "db"))
 class RunCucumber

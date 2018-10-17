@@ -3,7 +3,7 @@ language: java
 jdk:
   - oraclejdk8
 
-install: mvn test -Dtest=RunCucumber
+install: mvn test -Dtest=runner.RunCucumber
 
 after_success: ./report.sh
 
