@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory
 import org.scalatest.Matchers
 
 class TableCountSteps extends ScalaDsl with EN with Matchers {
-  var tableCount: TableCount = _
+  var tableCount: TableCount = new TableCount()
   var result: Long = _
 
   private val log = LoggerFactory.getLogger(classOf[TableCountSteps])
@@ -18,7 +18,7 @@ class TableCountSteps extends ScalaDsl with EN with Matchers {
   }
 
   Given("""^a table with name of ([^\"]*)""") { (name: String) =>
-    tableCount = new TableCount(name)
+    tableCount.setTable(name)
   }
 
   When("""^the operator requests count""") { () =>
