@@ -84,6 +84,8 @@
 					<aggregate>${scoverage.aggregate}</aggregate>
 					<minimumCoverage>80</minimumCoverage>
 					<failOnMinimumCoverage>true</failOnMinimumCoverage>
+					<excludedPackages>bank</excludedPackages>
+					<excludedFiles>BankAccount.scala</excludedFiles>
 				</configuration>
 			</plugin>
 		</plugins>
